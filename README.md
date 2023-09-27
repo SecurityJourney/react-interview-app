@@ -40,8 +40,9 @@ When the +/- button is clicked:
 
 ## Operator buttons
 The %, +, -, X, and ÷ buttons are all considered operators. When an operator is clicked:
-2. If the most recent state item is a number, add a new operator item to the state.
-3. If the most recent state item is another operator, replace the most recent item with the operator that was clicked.
+
+1. If the most recent state item is a number, add a new operator item to the state.
+2. If the most recent state item is another operator, replace the most recent item with the operator that was clicked.
 
 
 ## = button
