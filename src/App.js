@@ -66,7 +66,7 @@ function App() {
         }
         
         // set the buffer to the result
-        setCalcBuffer([result]);
+        setCalcBuffer([result.toString()]);
 
         break;
 
@@ -74,6 +74,9 @@ function App() {
         if (lastValue.indexOf(".") > -1) {
           // if the last value already has a decimal, don't add another one
           return;
+        } else if (isNaN(lastValue)) {
+          // create a new number with a leading zero
+          setCalcBuffer([...calcBuffer, "0".concat(value)]);
         } else {
           setCalcBuffer([...calcBuffer.slice(0, -1), lastValue.concat(value)]);
         }
@@ -82,7 +85,12 @@ function App() {
       case "+/-":
         // if the last value is a number, then make it negative
         if (!isNaN(lastValue)) {
-          setCalcBuffer([...calcBuffer.slice(0, -1), "-".concat(lastValue)]);
+          if (lastValue.indexOf("-") > -1) {
+            // if the number is already negative, make it positive
+            setCalcBuffer([...calcBuffer.slice(0, -1), lastValue.slice(1)]);
+          } else {
+            setCalcBuffer([...calcBuffer.slice(0, -1), "-".concat(lastValue)]);
+          }          
         }
         break;
 
