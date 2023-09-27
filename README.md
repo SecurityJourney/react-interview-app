@@ -23,7 +23,7 @@ Your task is to fill out the functionality based on the following requirements:
 
 When a digit button is clicked:
 1. If the calculator state is empty, add a new number item to the state.
-2. If the most recent item in state is a number, add the digit clicked onto the number (e.g. clicking "8" and then "9" should result in the number "89").
+2. If the most recent item in the state is a number, add the digit clicked onto the number (e.g. clicking "8" and then "9" should result in the number "89").
 3. If the most recent item in the state is an operator, create a new number item in the state.
 
 ## Decimal (".") button
