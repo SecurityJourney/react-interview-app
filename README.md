@@ -4,56 +4,22 @@ This is a shell for a simple Calculator app, bootstrapped with [Create React App
 
 Your task is to fill out the functionality based on the following requirements:
 
-## Initial state
+## Requirements
+__Initial state__: The calculator should show "0" if nothing has been entered. The user cannot enter an operator first, but must start by entering a number.
 
-1. When the app is launched (or the page refreshed), the calculator's state should be cleared.
-2. If the current state of the calculator is empty, any button click other than a digit is ignored.
+__Display__: The display area shows the numbers and operators entered by the user, as well as the result of the calculation after the user clicks "=".
 
-## Display
+__AC button__: Clicking the AC button clears the calculator state and reset the display to "0".
 
-1. The display should show the current state of the calculator, listing each item in the state in order from first (on the left) to most recent (on the right).
-2. If the state is empty, show a "0".
+__Digit buttons__: Used to enter numbers.
 
-## AC button
+__Decimal (".") button__: Adds a decimal to a number, or begins a number that starts with "0.".
 
-1. Clicking the AC button should clear the calculator state and reset the display to "0".
+__+/- button__: Negates a number, adding or removing `-` as needed. Ignored if the most recent entry is not a number.
 
+__Operator buttons__: The %, +, -, X, and ÷ buttons are all considered operators. Clicking one of these buttons enters an operator. If two operator buttons are clicked in a row (e.g. first an "X" and then a "-"), the second operator will overwrite the first operator.
 
-## Digit buttons
-
-When a digit button is clicked:
-1. If the calculator state is empty, add a new number item to the state.
-2. If the most recent item in the state is a number, add the digit clicked onto the number (e.g. clicking "8" and then "9" should result in the number "89").
-3. If the most recent item in the state is an operator, create a new number item in the state.
-
-## Decimal (".") button
-
-When the decimal button is clicked:
-1. If the last value already has a decimal, ignore the click.
-2. If the last item is an operator, create a new number with a leading 0 in the state.
-
-## +/- button
-When the +/- button is clicked:
-1. If the most recent state item is a number, negate that number (add or remove - as necessary).
-2. Clicking this button when the most recent state item is anything else should be ignored.
-
-
-## Operator buttons
-The %, +, -, X, and ÷ buttons are all considered operators. When an operator is clicked:
-
-1. If the most recent state item is a number, add a new operator item to the state.
-2. If the most recent state item is another operator, replace the most recent item with the operator that was clicked.
-
-
-## = button
-
-When the = button is clicked, calculate the result of the arithmetical expression defined by the state.
-
-1. All operators are executed in order, regardless of the operation being performed.
-2. The "%" operator is shorthand for dividing by 100.
-3. The result of the calculation is stored as a number item in the state.
-
-
+__= button__: Calculates and displays the result of the arithmetical expression that was entered by the user. All operators are executed in order, regardless of the operation being performed. The "%" operator is shorthand for dividing by 100.
 
 ## Available Scripts
 
